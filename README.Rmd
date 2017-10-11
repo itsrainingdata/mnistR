@@ -46,7 +46,7 @@ The result is a list containing two data frames (`train` and `test`). The labels
 
 ## Credit
 
-This package is a port of code written by [@brendano](https://github.com/brendano) and [@daviddalpiaz](https://github.com/daviddalpiaz). The original code can be found here:
+This package is a port of code written by [\@brendano](https://www.github.com/brendano) and [\@daviddalpiaz](https://www.github.com/daviddalpiaz). The original code can be found here:
 
 * https://gist.github.com/daviddalpiaz/ae62ae5ccd0bada4b9acd6dbc9008706
 * https://gist.github.com/brendano/39760
