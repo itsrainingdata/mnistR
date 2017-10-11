@@ -1,0 +1,17 @@
+Package: mnistR
+Type: Package
+Title: Download and load MNIST data
+Version: 0.0.1
+Date: 2017-10-10
+Authors@R: c(
+    person("Brendan", "Connor", role = c("aut")),
+    person("David", "Dalpiaz", role = c("aut")),
+    person("Bryon", "Aragam", email = "sparsebn@gmail.com", role = c("aut", "cre"))
+    )
+Maintainer: Bryon Aragam <sparsebn@gmail.com>
+Description: Push button access to MNIST data within R. Downloads and loads the data from the web <http://yann.lecun.com/exdb/mnist/> and stores separate training and test datasets as tidy data frames.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+License: MIT
+RoxygenNote: 6.0.1
