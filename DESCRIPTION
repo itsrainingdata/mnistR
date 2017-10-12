@@ -10,8 +10,9 @@ Authors@R: c(
     )
 Maintainer: Bryon Aragam <sparsebn@gmail.com>
 Description: Push button access to MNIST data within R. Downloads and loads the data from the web <http://yann.lecun.com/exdb/mnist/> and stores separate training and test datasets as tidy data frames.
-License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 License: MIT
 RoxygenNote: 6.0.1
+Imports:
+    R.utils
