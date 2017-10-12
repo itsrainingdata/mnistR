@@ -30,25 +30,14 @@ devtools::install_github("itsrainingdata/mnistR")
 
 ## Usage
 
-Download the data to your local drive at `/path/to`:
-
-```{r eval = FALSE}
-mnistR::downloadMNIST(dest = "/path/to/")
-```
-
-Load the data (after downloading):
-
-```{r eval = FALSE}
-mnistR::loadMNIST(dest = "/path/to/")
-```
-
-The result is a list containing two data frames (`train` and `test`). The labels are stored in the last column, `train$y` and `test$y`.
-
 To automatically download to current working directory, extract, load, and split into train (`mnist_trn`) and test (`mnist_tst`) datasets, use:
 
 ```{r, eval = FALSE}
-mnistR::autoloadMNIST()
+mnist_trn = autoload_mnist_trn()
+mnist_tst = autoload_mnist_tst()
 ```
+
+Further documentation forthcoming.
 
 ## Credit
 
