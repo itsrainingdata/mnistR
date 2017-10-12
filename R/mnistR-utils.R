@@ -15,7 +15,7 @@ get_option <- function(opt){
     options()[[opt]]
 }
 
-downloadMNIST <- function(dest = NULL) {
+download_mnist_trn <- function(dest = NULL) {
 
     if (is.null(dest)) {
         dest <- get_option("mnistR.destfolder")
@@ -31,20 +31,41 @@ downloadMNIST <- function(dest = NULL) {
                   paste0(dest, "train-images-idx3-ubyte.gz"))
     download.file("http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz",
                   paste0(dest, "train-labels-idx1-ubyte.gz"))
+
+    # gunzip the files
+    R.utils::gunzip(paste0(dest, "train-images-idx3-ubyte.gz"))
+    R.utils::gunzip(paste0(dest, "train-labels-idx1-ubyte.gz"))
+
+    msg <- sprintf("MNIST train data downloaded successfully!\n\tData can be found in %s", dest)
+    message(msg)
+}
+
+download_mnist_tst <- function(dest = NULL) {
+
+    if (is.null(dest)) {
+        dest <- get_option("mnistR.destfolder")
+        if (is.null(dest)) {
+            stop("Please choose a destination folder to store the data!")
+        }
+    } else {
+        set_option("mnistR.destfolder", dest)
+    }
+
+    # download data from http://yann.lecun.com/exdb/mnist/
     download.file("http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz",
                   paste0(dest, "t10k-images-idx3-ubyte.gz"))
     download.file("http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz",
                   paste0(dest, "t10k-labels-idx1-ubyte.gz"))
 
     # gunzip the files
-    R.utils::gunzip(paste0(dest, "train-images-idx3-ubyte.gz"))
-    R.utils::gunzip(paste0(dest, "train-labels-idx1-ubyte.gz"))
     R.utils::gunzip(paste0(dest, "t10k-images-idx3-ubyte.gz"))
     R.utils::gunzip(paste0(dest, "t10k-labels-idx1-ubyte.gz"))
 
-    msg <- sprintf("MNIST data downloaded successfully!\n\tData can be found in %s", dest)
+    msg <- sprintf("MNIST test data downloaded successfully!\n\tData can be found in %s", dest)
     message(msg)
 }
+
+
 
 # load image files
 load_image_file <- function(filename) {
