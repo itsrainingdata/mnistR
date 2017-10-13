@@ -42,7 +42,7 @@ mnistR::loadMNIST(dest = "/path/to/")
 
 The result is a list containing two data frames (`train` and `test`). The labels are stored in the last column, `train$y` and `test$y`.
 
-For even finer grained access, see the methods `load_mnist_train`, `load_mnist_test`, and the corresponding `download` and `autoload` methods.
+The `autoloadMNIST` method is simply a wrapper to combine these steps into one method. For even finer grained access, see the methods `load_mnist_train`, `load_mnist_test`, and the corresponding `download` and `autoload` methods.
 
 Credit
 ------
