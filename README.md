@@ -7,7 +7,7 @@ A simple R package to download, collate, and load the classic [MNIST dataset](ht
 Installation
 ------------
 
-You can install mnistR from github with:
+You can install mnistR from GitHub with:
 
 ``` r
 # install.packages("devtools")
@@ -16,6 +16,17 @@ devtools::install_github("itsrainingdata/mnistR")
 
 Usage
 -----
+
+Access the data in one line, as quickly as possible:
+
+``` r
+MNIST <- mnistR::autoloadMNIST()
+```
+
+By default, the data will be saved to the current working directory. This directory can be manually specified via the `dest` argument (see Overview).
+
+Overview
+--------
 
 Download the data to your local drive at `/path/to`:
 
@@ -30,6 +41,8 @@ mnistR::loadMNIST(dest = "/path/to/")
 ```
 
 The result is a list containing two data frames (`train` and `test`). The labels are stored in the last column, `train$y` and `test$y`.
+
+For even finer grained access, see the methods `load_mnist_train`, `load_mnist_test`, and the corresponding `download` and `autoload` methods.
 
 Credit
 ------
